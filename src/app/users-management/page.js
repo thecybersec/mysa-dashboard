@@ -1,10 +1,11 @@
 import DashboardLayout from "@/components/DashboardLayout/DashboardLayout";
+import UserManagement from "@/components/UserManagement/UserManagement";
 
 const UserManagementPage = () => {
   const design = (
     <>
       <DashboardLayout>
-        <h1>dfsd</h1>
+        <UserManagement />
       </DashboardLayout>
     </>
   );
