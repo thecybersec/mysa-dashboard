@@ -1,6 +1,7 @@
 "use client";
 
 import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 const activityData = [
   {
@@ -77,9 +78,11 @@ const RecentActivity = () => {
                   </td>
                   <td className="px-6 py-4">{activity.partner}</td>
                   <td className="px-6 py-4">
-                    <button className="flex items-center gap-1 text-pink-500 hover:text-pink-600 font-medium">
-                      View <ExternalLink className="h-4 w-4" />
-                    </button>
+                    <Link href="/activity-monitor">
+                      <button className="flex items-center gap-1 text-pink-500 hover:text-pink-600 font-medium">
+                        View <ExternalLink className="h-4 w-4" />
+                      </button>
+                    </Link>
                   </td>
                 </tr>
               ))}

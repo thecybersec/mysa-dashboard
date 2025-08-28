@@ -77,7 +77,7 @@ const ActivityDetails = ({ activity, users }) => {
 
                     <Button
                       variant="link"
-                      className="h-auto p-0 text-xs text-blue-600"
+                      className="h-auto p-0 text-xs text-pink"
                     >
                       View Profile
                     </Button>

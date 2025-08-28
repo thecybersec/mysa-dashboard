@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Star, Users } from "lucide-react";
+import { Building2, MapPin, Star } from "lucide-react";
 const PartnerDetails = ({ partner, timeline, feedback }) => {
   const design = (
     <>
@@ -17,7 +17,7 @@ const PartnerDetails = ({ partner, timeline, feedback }) => {
           <CardContent className="space-y-4">
             <div className="flex items-start gap-3">
               <div className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center">
-                <Users className="h-4 w-4" />
+                <Building2 className="h-4 w-4" />
               </div>
               <div className="flex-1">
                 <h3 className="font-semibold">{partner.name}</h3>
@@ -40,16 +40,22 @@ const PartnerDetails = ({ partner, timeline, feedback }) => {
               </div>
             </div>
 
-            <div className="w-full h-32 bg-gray-100 rounded-lg flex items-center justify-center relative">
-              <img
-                src="/restaurant-map-location.png"
-                alt="Restaurant location map"
-                className="w-full h-full object-cover rounded-lg"
-              />
-              <div className="absolute top-2 right-2 w-3 h-3 bg-red-500 rounded-full"></div>
+            <div className="w-full h-32 bg-gray-100 rounded-lg flex items-center justify-center relative overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d58951.10007403045!2d88.5125542!3d22.5625006!3m2!1i1024!2i768!4f13.1!2m1!1srestaurant%20location!5e0!3m2!1sen!2sin!4v1756369615769!5m2!1sen!2sin"
+                className="absolute inset-0 w-full h-full rounded-lg"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+
+              {/* Marker dot overlay */}
+              <div className="absolute top-2 right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center shadow-lg">
+                <MapPin color="white" size={18} />
+              </div>
             </div>
 
-            <Button variant="link" className="h-auto p-0 text-blue-600">
+            <Button variant="link" className="h-auto p-0 text-pink">
               View Partner Profile
             </Button>
           </CardContent>
