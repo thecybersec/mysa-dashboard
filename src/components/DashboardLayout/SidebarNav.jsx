@@ -8,14 +8,17 @@ export default function SidebarNav({ menuItems }) {
     <nav className="flex-1 px-4 py-6 space-y-2">
       {menuItems.map((item) => {
         const IconComponent = item.icon;
-        const isActive = pathname === item.href;
+
+        // agar pathname item.href se start ho to active
+        const isActive =
+          pathname === item.href || pathname.startsWith(`${item.href}/`);
 
         return (
           <Link
             key={item.id}
             href={item.href}
             className={`
-              flex items-center justify-between px-3 py-2 rounded-lg text-sm font-semibold  transition-colors
+              flex items-center justify-between px-3 py-2 rounded-lg text-sm font-semibold transition-colors
               ${isActive ? "bg-pink-light text-pink" : "text-[#667085]"}
             `}
           >

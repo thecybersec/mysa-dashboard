@@ -21,6 +21,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Pagination } from "antd";
+import Link from "next/link";
 
 const usersData = [
   {
@@ -122,16 +123,21 @@ const UsersTable = () => {
               <tbody>
                 {users.map((user) => (
                   <tr key={user.id} className="border-b hover:bg-gray-50">
-                    <td className="p-3 flex items-center gap-3">
-                      <Avatar>
-                        <AvatarImage src={user.avatar} alt={user.name} />
-                        <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="font-medium">{user.name}</p>
-                        <p className="text-xs text-gray-500">{user.location}</p>
-                      </div>
-                    </td>
+                    <Link href={`/users-management/${user.id}`}>
+                      <td className="p-3 flex items-center gap-3">
+                        <Avatar>
+                          <AvatarImage src={user.avatar} alt={user.name} />
+                          <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
+                        </Avatar>
+
+                        <div>
+                          <p className="font-medium">{user.name}</p>
+                          <p className="text-xs text-gray-500">
+                            {user.location}
+                          </p>
+                        </div>
+                      </td>
+                    </Link>
                     <td className="p-3">
                       <p>{user.email}</p>
                       <p className="text-xs text-gray-500">{user.phone}</p>
