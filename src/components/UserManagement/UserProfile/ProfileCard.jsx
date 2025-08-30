@@ -224,8 +224,8 @@ const ProfileCard = () => {
 
               <p className="max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever.
+                industry. Lorem Ipsum has been the industry&apos;s standard
+                dummy text ever.
               </p>
             </div>
 
